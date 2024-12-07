@@ -1,138 +1,204 @@
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>AME - Associação das Mães e Exepcionas</title>
+    <title>Support for Autistic Children</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"/>
     <style>
-        :root {
-            --color-blue: #A2C8E6;
-            --color-yellow: #FDE8B4;
-            --color-red: #F4A6A6;
-            --color-green: #B4E6B4;
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .carousel {
+            display: flex;
+            overflow: hidden;
+            scroll-behavior: smooth;
+        }
+        .carousel img {
+            transition: transform 0.5s ease-in-out;
+        }
+        .carousel img:hover {
+            transform: scale(1.1);
+        }
+        .section {
+            transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+        }
+        .section:hover {
+            transform: translateY(-10px);
+            opacity: 0.9;
+        }
+        .fade-in {
+            animation: fadeIn 2s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
     </style>
 </head>
-<body class="font-roboto bg-gray-50">
-    <header class="bg-white shadow-md">
-        <div class="container mx-auto flex justify-between items-center py-4 px-6">
-            <div class="flex items-center">
-                <img alt="Símbolo do Autismo" class="h-10 w-10" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Autism_Awareness_Ribbon.png/800px-Autism_Awareness_Ribbon.png"/>
-                <span class="ml-3 text-lg font-bold text-gray-800">FotsTioeol For</span>
+<body class="bg-blue-50 text-gray-800">
+    <header class="flex flex-col md:flex-row justify-between items-center p-6 bg-blue-300 text-white">
+        <div class="flex items-center space-x-2 mb-4 md:mb-0">
+            <img alt="Logo" class="w-10 h-10" height="40" src="logo.png" width="40"/>
+            <span class="font-bold text-lg">AUNT COHE</span>
+        </div>
+        <nav class="space-x-6 mb-4 md:mb-0">
+            <a class="hover:text-yellow-300" href="#">ABOUT US</a>
+            <a class="hover:text-yellow-300" href="#">PRVCS</a>
+            <a class="hover:text-yellow-300" href="#">HEME</a>
+            <a class="hover:text-yellow-300" href="#">LOMCT</a>
+            <a class="hover:text-yellow-300" href="#">CONTACT</a>
+        </nav>
+        <button class="border border-white rounded-full px-4 py-1 hover:bg-yellow-300 hover:text-blue-500">GOT AL</button>
+    </header>
+    <main class="text-center py-12">
+        <h1 class="text-3xl font-bold mb-8 text-blue-500 fade-in">Support for Autistic Children</h1>
+        <div class="relative flex justify-center items-center space-x-4">
+            <button class="absolute left-0 text-blue-500 hover:text-yellow-300" onclick="scrollCarousel(-1)">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="carousel flex space-x-4 overflow-hidden w-full max-w-4xl">
+                <img alt="Children playing" class="rounded-lg w-36 h-36 object-cover" height="150" src="https://storage.googleapis.com/a1aa/image/7vPPcslLahrKBRebWcZFcjVAjDeHQcO0WsqHvvGkuFlLQX4TA.jpg" width="150"/>
+                <img alt="Child with glasses" class="rounded-lg w-36 h-36 object-cover" height="150" src="https://storage.googleapis.com/a1aa/image/1olQp9sNw04ZAV4SKK1t1iORYdxqfmXK3zmwddH3qTdEoL8JA.jpg" width="150"/>
+                <img alt="Smiling girl" class="rounded-lg w-36 h-36 object-cover" height="150" src="https://storage.googleapis.com/a1aa/image/3SzAUc683PosBZYPBrTwZHubcRnYYFVwwWOqVIHv4PWD0FeJA.jpg" width="150"/>
+                <img alt="Girl with braids" class="rounded-lg w-36 h-36 object-cover" height="150" src="https://storage.googleapis.com/a1aa/image/6y7cMO9BY27bJZ91RQ4VnuGqC6WbtM2a6Nvs1IevPfaKQX4TA.jpg" width="150"/>
+                <img alt="Boy playing" class="rounded-lg w-36 h-36 object-cover" height="150" src="https://storage.googleapis.com/a1aa/image/JHUkP368cEq0DdcOGpYZji3oifNQm2PHTpWwqEHoMcmDoL8JA.jpg" width="150"/>
             </div>
-            <nav class="hidden md:flex space-x-6">
-                <a class="text-gray-700 hover:text-gray-900" href="#sobre">Sobre</a>
-                <a class="text-gray-700 hover:text-gray-900" href="#historia">História</a>
-                <a class="text-gray-700 hover:text-gray-900" href="#projetos">Projetos</a>
-                <a class="text-gray-700 hover:text-gray-900" href="#depoimentos">Depoimentos</a>
-                <a class="text-gray-700 hover:text-gray-900" href="#contato">Contato</a>
-            </nav>
-            <div class="flex items-center space-x-4">
-                <a class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" href="#">DOAÇÃO</a>
+            <button class="absolute right-0 text-blue-500 hover:text-yellow-300" onclick="scrollCarousel(1)">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </main>
+    <section class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4 py-12">
+        <div class="bg-white p-6 rounded-lg shadow-md w-full md:w-1/4 transform transition duration-500 hover:scale-105 section">
+            <h2 class="text-xl font-bold mb-4 text-blue-500">About Us</h2>
+            <p class="text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <div class="flex justify-between items-center">
+                <span class="text-gray-600">1904</span>
+                <button class="border border-blue-500 rounded-full px-4 py-1 text-blue-500 hover:bg-yellow-300 hover:text-blue-500">
+                    <i class="fas fa-arrow-right"></i>
+                </button>
             </div>
         </div>
-    </header>
-    <main>
-        <section id="sobre" class="relative bg-gray-100">
-            <div class="container mx-auto flex flex-col md:flex-row items-center py-16 px-6">
-                <div class="md:w-1/2 mb-8 md:mb-0">
-                    <div class="bg-white inline-block px-4 py-2 rounded-full mb-4 shadow" style="background-color: var(--color-yellow);">
-                        <span class="text-red-500 font-bold">EAMTOUP</span>
-                    </div>
-                    <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4 text-gray-800">Empoderando crianças autistas, um sorriso de cada vez.</h1>
-                    <div class="h-1 w-16 mb-4" style="background-color: var(--color-blue);"></div>
-                </div>
-                <div class="md:w-1/2">
-                    <img alt="Criança com o rosto pintado em padrões coloridos" class="w-full rounded-lg shadow-lg" src="https://storage.googleapis.com/a1aa/image/bNJDzSg3ZaoeAS1p5D1Ty31WEeAbbprP6yo0cJh8Oqxt7V4TA.jpg"/>
-                </div>
+        <div class="bg-yellow-200 p-6 rounded-lg shadow-md w-full md:w-1/4 transform transition duration-500 hover:scale-105 section">
+            <h2 class="text-xl font-bold mb-4 text-blue-500">Programs</h2>
+            <p class="text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <div class="flex justify-between items-center">
+                <span class="text-gray-600">КЛМ</span>
+                <button class="border border-blue-500 rounded-full px-4 py-1 text-blue-500 hover:bg-yellow-300 hover:text-blue-500">
+                    <i class="fas fa-arrow-right"></i>
+                </button>
             </div>
-        </section>
-        <section id="historia" class="bg-white py-16 px-6">
-            <div class="container mx-auto text-center">
-                <h2 class="text-3xl font-bold text-gray-800 mb-8">Nossa História</h2>
-                <div class="relative">
-                    <div class="border-l-2 absolute h-full left-1/2 transform -translate-x-1/2" style="border-color: var(--color-green);"></div>
-                    <div class="space-y-8">
-                        <div class="flex flex-col md:flex-row items-center">
-                            <div class="md:w-1/2 md:pr-8 mb-8 md:mb-0">
-                                <h3 class="text-xl font-bold text-gray-800 mb-2">Fundação</h3>
-                                <p class="text-gray-700">Nossa ONG foi fundada em 2000 com o objetivo de ajudar crianças autistas a se desenvolverem e serem felizes.</p>
-                            </div>
-                            <div class="md:w-1/2 md:pl-8">
-                                <img alt="Fundação" class="w-full rounded-lg shadow-lg" src="https://storage.googleapis.com/a1aa/image/3xadEXHLEjLIP9yO3fzNfWnNnLMz1jODgCSKSNlswWCBfrwnA.jpg"/>
-                            </div>
-                        </div>
-                        <div class="flex flex-col md:flex-row items-center">
-                            <div class="md:w-1/2 md:pr-8 mb-8 md:mb-0">
-                                <h3 class="text-xl font-bold text-gray-800 mb-2">Primeiros Projetos</h3>
-                                <p class="text-gray-700">Iniciamos nossos primeiros projetos em 2005, focando em atividades educativas e recreativas para as crianças.</p>
-                            </div>
-                            <div class="md:w-1/2 md:pl-8">
-                                <img alt="Primeiros Projetos" class="w-full rounded-lg shadow-lg" src="https://storage.googleapis.com/a1aa/image/cxBaDnFWF45cIB0EnHXyZjtlcNesqAATvsJApupJqARhfV4TA.jpg"/>
-                            </div>
-                        </div>
-                        <div class="flex flex-col md:flex-row items-center">
-                            <div class="md:w-1/2 md:pr-8 mb-8 md:mb-0">
-                                <h3 class="text-xl font-bold text-gray-800 mb-2">Crescimento</h3>
-                                <p class="text-gray-700">Ao longo dos anos, nossa ONG cresceu e hoje atendemos mais de 500 crianças em diversas regiões.</p>
-                            </div>
-                            <div class="md:w-1/2 md:pl-8">
-                                <img alt="Crescimento" class="w-full rounded-lg shadow-lg" src="https://storage.googleapis.com/a1aa/image/nzeAKN1YIFVAQCOKW0XY8AleH1ZeoB7Jfffnmcw7myX0vfK8JA.jpg"/>
-                            </div>
-                        </div>
-                    </div>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md w-full md:w-1/4 transform transition duration-500 hover:scale-105 section">
+            <h2 class="text-xl font-bold mb-4 text-blue-500">Events</h2>
+            <p class="text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <div class="flex justify-between items-center">
+                <span class="text-gray-600">9009</span>
+                <button class="border border-blue-500 rounded-full px-4 py-1 text-blue-500 hover:bg-yellow-300 hover:text-blue-500">
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+        <div class="bg-yellow-200 p-6 rounded-lg shadow-md w-full md:w-1/4 transform transition duration-500 hover:scale-105 section">
+            <h2 class="text-xl font-bold mb-4 text-blue-500">Contact</h2>
+            <p class="text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <div class="flex justify-between items-center">
+                <span class="text-gray-600">КЛМ</span>
+                <button class="border border-blue-500 rounded-full px-4 py-1 text-blue-500 hover:bg-yellow-300 hover:text-blue-500">
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+    <section class="py-12 bg-blue-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="mb-12 section">
+                <h2 class="text-2xl font-bold mb-4 text-blue-500">About Us</h2>
+                <div class="flex flex-col md:flex-row items-center">
+                    <img alt="About Us Image" class="rounded-lg w-full md:w-1/2 h-64 object-cover mb-4 md:mb-0 md:mr-4 transform transition duration-500 hover:scale-105" height="400" src="https://storage.googleapis.com/a1aa/image/nEFmXAFeshVfCkLlS7fQeBw6CJhxnCqq8xGCdFDhZ5jrwdhPB.jpg" width="600"/>
+                    <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                 </div>
             </div>
-        </section>
-        <section id="projetos" class="bg-gray-100 py-16 px-6">
-            <div class="container mx-auto text-center">
-                <h2 class="text-3xl font-bold text-gray-800 mb-8">Nossos Projetos</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="bg-white p-6 rounded-lg shadow-lg">
-                        <img alt="Projeto 1" class="w-full h-48 object-cover rounded-t-lg mb-4" src="https://storage.googleapis.com/a1aa/image/3xadEXHLEjLIP9yO3fzNfWnNnLMz1jODgCSKSNlswWCBfrwnA.jpg"/>
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">Projeto 1</h3>
-                        <p class="text-gray-700">Descrição do projeto 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-lg">
-                        <img alt="Projeto 2" class="w-full h-48 object-cover rounded-t-lg mb-4" src="https://storage.googleapis.com/a1aa/image/cxBaDnFWF45cIB0EnHXyZjtlcNesqAATvsJApupJqARhfV4TA.jpg"/>
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">Projeto 2</h3>
-                        <p class="text-gray-700">Descrição do projeto 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-lg">
-                        <img alt="Projeto 3" class="w-full h-48 object-cover rounded-t-lg mb-4" src="https://storage.googleapis.com/a1aa/image/nzeAKN1YIFVAQCOKW0XY8AleH1ZeoB7Jfffnmcw7myX0vfK8JA.jpg"/>
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">Projeto 3</h3>
-                        <p class="text-gray-700">Descrição do projeto 3. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    </div>
+            <div class="mb-12 section">
+                <h2 class="text-2xl font-bold mb-4 text-blue-500">Programs</h2>
+                <div class="flex flex-col md:flex-row items-center">
+                    <img alt="Programs Image" class="rounded-lg w-full md:w-1/2 h-64 object-cover mb-4 md:mb-0 md:mr-4 transform transition duration-500 hover:scale-105" height="400" src="https://storage.googleapis.com/a1aa/image/mghBdc3lHF6CORm99fwJbGxqLFBH6CyEZLAZe47bN80NcX4TA.jpg" width="600"/>
+                    <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                 </div>
             </div>
-        </section>
-        <section id="depoimentos" class="bg-white py-16 px-6">
-            <div class="container mx-auto text-center">
-                <h2 class="text-3xl font-bold text-gray-800 mb-8">Depoimentos</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
-                        <p class="text-gray-700 mb-4">"A ONG mudou a vida do meu filho. Ele está mais feliz e confiante."</p>
-                        <p class="text-gray-800 font-bold">- Maria Silva</p>
-                    </div>
-                    <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
-                        <p class="text-gray-700 mb-4">"Os projetos são incríveis e realmente fazem a diferença."</p>
-                        <p class="text-gray-800 font-bold">- João Souza</p>
-                    </div>
+            <div class="mb-12 section">
+                <h2 class="text-2xl font-bold mb-4 text-blue-500">Events</h2>
+                <div class="flex flex-col md:flex-row items-center">
+                    <img alt="Events Image" class="rounded-lg w-full md:w-1/2 h-64 object-cover mb-4 md:mb-0 md:mr-4 transform transition duration-500 hover:scale-105" height="400" src="https://storage.googleapis.com/a1aa/image/GYQwGwXtDVr6NxA5vE0euFXjazrOxfhOAeCvYgesIzIuwdhPB.jpg" width="600"/>
+                    <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                 </div>
             </div>
-        </section>
-    </main>
-    <footer class="bg-white py-6">
-        <div class="container mx-auto text-center">
-            <div class="flex justify-center space-x-6 mb-4">
-                <a href="#" class="text-gray-700 hover:text-gray-900"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="text-gray-700 hover:text-gray-900"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="text-gray-700 hover:text-gray-900"><i class="fab fa-instagram"></i></a>
+            <div class="mb-12 section">
+                <h2 class="text-2xl font-bold mb-4 text-blue-500">Contact</h2>
+                <div class="flex flex-col md:flex-row items-center">
+                    <img alt="Contact Image" class="rounded-lg w-full md:w-1/2 h-64 object-cover mb-4 md:mb-0 md:mr-4 transform transition duration-500 hover:scale-105" height="400" src="https://storage.googleapis.com/a1aa/image/i4E1m9ryRBLZJpdl5H2AUpezVyYExPnQzYEO2TxsGwaEuL8JA.jpg" width="600"/>
+                    <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
             </div>
-            <p class="text-gray-700">© 2023 FotsTioeol For. Todos os direitos reservados.</p>
+        </div>
+    </section>
+    <section class="py-12 bg-yellow-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="mb-12 section">
+                <h2 class="text-2xl font-bold mb-4 text-blue-500">Our Mission</h2>
+                <div class="flex flex-col md:flex-row items-center">
+                    <img alt="Our Mission Image" class="rounded-lg w-full md:w-1/2 h-64 object-cover mb-4 md:mb-0 md:mr-4 transform transition duration-500 hover:scale-105" height="400" src="https://storage.googleapis.com/a1aa/image/mission.jpg" width="600"/>
+                    <p class="text-gray-600">Our mission is to provide support and resources for children with autism and their families. We aim to create a nurturing environment where every child can thrive and reach their full potential.</p>
+                </div>
+            </div>
+            <div class="mb-12 section">
+                <h2 class="text-2xl font-bold mb-4 text-blue-500">Our Vision</h2>
+                <div class="flex flex-col md:flex-row items-center">
+                    <img alt="Our Vision Image" class="rounded-lg w-full md:w-1/2 h-64 object-cover mb-4 md:mb-0 md:mr-4 transform transition duration-500 hover:scale-105" height="400" src="https://storage.googleapis.com/a1aa/image/vision.jpg" width="600"/>
+                    <p class="text-gray-600">Our vision is a world where children with autism are understood, accepted, and supported. We strive to raise awareness and promote inclusion in all aspects of life.</p>
+                </div>
+            </div>
+            <div class="mb-12 section">
+                <h2 class="text-2xl font-bold mb-4 text-blue-500">Our Values</h2>
+                <div class="flex flex-col md:flex-row items-center">
+                    <img alt="Our Values Image" class="rounded-lg w-full md:w-1/2 h-64 object-cover mb-4 md:mb-0 md:mr-4 transform transition duration-500 hover:scale-105" height="400" src="https://storage.googleapis.com/a1aa/image/values.jpg" width="600"/>
+                    <p class="text-gray-600">We value compassion, understanding, and inclusivity. We believe in the potential of every child and are committed to providing the support they need to succeed.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-blue-300 text-white py-6">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <img alt="Logo" class="w-10 h-10 inline-block" height="40" src="https://storage.googleapis.com/a1aa/image/bicspyrB6EbzMZy8qfvrN8Oj3h9iCbOybQnf2jYA3f7NguwnA.jpg" width="40"/>
+                    <span class="font-bold text-lg ml-2">AUNT COHE</span>
+                </div>
+                <div class="space-x-6">
+                    <a class="hover:text-yellow-300" href="#">ABOUT US</a>
+                    <a class="hover:text-yellow-300" href="#">PRVCS</a>
+                    <a class="hover:text-yellow-300" href="#">HEME</a>
+                    <a class="hover:text-yellow-300" href="#">LOMCT</a>
+                    <a class="hover:text-yellow-300" href="#">CONTACT</a>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <p>&copy; 2023 AUNT COHE. All rights reserved.</p>
+            </div>
         </div>
     </footer>
+    <script>
+        function scrollCarousel(direction) {
+            const carousel = document.querySelector('.carousel');
+            const scrollAmount = direction * 150;
+            carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        }
+    </script>
 </body>
 </html>
